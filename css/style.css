@@ -194,7 +194,43 @@
 .main .chat {
   width: 100%;
   height: 80%;
+  padding: 50px 100px;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
   background-image: url("../img/mine.jpg");
+}
+
+.main .chat .message {
+  margin: 10px 0;
+  padding: 5px;
+  width: 300px;
+  border-radius: 10px;
+}
+
+.main .chat .message.user {
+  background-color: #C9FBB6;
+  align-self: flex-end;
+}
+
+.main .chat .message.friend {
+  background-color: #FFFFFF;
+}
+
+.main .chat .message .text {
+  margin: 10px;
+  font-size: 18px;
+}
+
+.main .chat .message .data {
+  font-size: 12px;
+  text-align: right;
+}
+
+/* mi serve per aggiungere 50px di padding dopo l'ultimo messaggio o altrimenti in overflow sparisce */
+.main .chat::after {
+  content: "";
+  padding-bottom: 50px;
 }
 
 /* regole barra di input in basso */
