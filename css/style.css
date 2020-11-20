@@ -51,7 +51,7 @@
 
 .nav .menu .user img {
   margin-right: 10px;
-  width: 25%;
+  height: 60px;
   border-radius: 100%;
 }
 
@@ -111,10 +111,40 @@
 }
 
 /* regole lista amici */
-.nav .friends {
+.nav .friend-list {
   width: 100%;
   height: 70%;
+  overflow: auto;
   background-color: #FFFFFF;
+}
+
+.nav .friend-list .friend {
+  width: 100%;
+  height: 100px;
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #D6DAD3;
+}
+
+.nav .friend-list .friend .info {
+  width: 60%;
+  display: flex;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.nav .friend-list .friend .info img {
+  margin: 0 20px;
+  height: 80px;
+  border-radius: 100%;
+}
+
+.nav .friend-list .friend .last-online {
+  width: 30%;
+  margin-right: 10px;
+  text-align: right;
 }
 
 /* regole relative al lato destro dell'app con la chat */
