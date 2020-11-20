@@ -19,6 +19,10 @@
   display: flex;
 }
 
+.grey {
+  color: #AFAFAF;
+}
+
 /* regole relative al lato sinistro dell'app con il menú */
 .nav {
   width: 35%;
@@ -30,7 +34,28 @@
 .nav .menu {
   width: 100%;
   height: 12%;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   background-color: #E9E9E9;
+}
+
+.nav .menu .user {
+  width: 50%;
+  display: flex;
+  align-items: center;
+}
+
+.nav .menu .user img {
+  margin-right: 10px;
+  width: 30%;
+  border-radius: 100%;
+}
+
+.nav .menu .actions i {
+  margin: 0 10px;
+  font-size: 24px;
 }
 
 .nav .notification {
