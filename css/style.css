@@ -24,6 +24,7 @@
 }
 
 /* regole relative al lato sinistro dell'app con il menú */
+/* regole generali lato sinistro */
 .nav {
   width: 35%;
   height: 100%;
@@ -31,9 +32,10 @@
   flex-direction: column;
 }
 
+/* regole menú utente */
 .nav .menu {
   width: 100%;
-  height: 12%;
+  height: 10%;
   padding: 0 20px;
   display: flex;
   justify-content: space-between;
@@ -49,7 +51,7 @@
 
 .nav .menu .user img {
   margin-right: 10px;
-  width: 30%;
+  width: 25%;
   border-radius: 100%;
 }
 
@@ -58,18 +60,57 @@
   font-size: 24px;
 }
 
+/* regole notifiche */
 .nav .notification {
   width: 100%;
   height: 12%;
+  padding: 0 30px;
+  display: flex;
+  align-items: center;
   background-color: #73DAFD;
 }
 
+.nav .notification i {
+  margin-right: 10px;
+  font-size: 24px;
+  padding: 20px 15px;
+  border-radius: 100%;
+  color: #73DAFD;
+  background-color: #FFFFFF;
+}
+
+.nav .notification .instructions a {
+  color: #457384;
+}
+
+/* regole barra di ricerca */
 .nav .search {
   width: 100%;
-  height: 6%;
+  height: 8%;
+  padding: 10px;
   background-color: #E9E9E9;
 }
 
+.nav .search-box {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #FFFFFF;
+}
+
+.nav .search-box i {
+  margin-left: 30px;
+  font-size: 20px;
+}
+
+.nav .search-box input {
+  width: 82%;
+  font-size: 12px;
+  border: none;
+}
+
+/* regole lista amici */
 .nav .friends {
   width: 100%;
   height: 70%;
@@ -77,6 +118,7 @@
 }
 
 /* regole relative al lato destro dell'app con la chat */
+/* regole generali lato destro */
 .main {
   width: 65%;
   height: 100%;
@@ -85,20 +127,23 @@
   border-left: 1px solid #D6DAD3;
 }
 
+/* regole informazioni amico selezionato */
 .main .info {
   width: 100%;
-  height: 12%;
+  height: 10%;
   background-color: #E9E9E9;
 }
 
+/* regole chat */
 .main .chat {
   width: 100%;
-  height: 76%;
+  height: 80%;
   background-image: url("../img/mine.jpg");
 }
 
+/* regole barra di input in basso */
 .main .type {
   width: 100%;
-  height: 12%;
+  height: 10%;
   background-color: #E9E9E9;
 }
