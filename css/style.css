@@ -3,6 +3,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: 'Lato', sans-serif;
 }
 
 .container {
@@ -19,12 +20,29 @@
   display: flex;
 }
 
+/* regole generali per colori e dimensioni del testo */
 .grey {
   color: #AFAFAF;
 }
 
 .dark {
   color: #687275;
+}
+
+.black {
+  color: #000000;
+}
+
+.big-text {
+  font-size: 18px;
+}
+
+.small-text {
+  font-size: 14px;
+}
+
+i {
+  font-size: 24px;
 }
 
 /* regole relative al lato sinistro dell'app con il menú */
@@ -36,9 +54,8 @@
   flex-direction: column;
 }
 
-/* regole menú utente */
-.nav .menu {
-  width: 100%;
+/* regole menú in alto (sia in alto a sinistra nel nav utente che in alto a destra sopra la chat)*/
+.menu {
   height: 10%;
   padding: 0 20px;
   display: flex;
@@ -47,26 +64,24 @@
   background-color: #E9E9E9;
 }
 
-.nav .menu .user {
+.menu .info {
   width: 50%;
   display: flex;
   align-items: center;
 }
 
-.nav .menu .user img {
-  margin-right: 10px;
+.menu .info img {
+  margin-right: 20px;
   height: 60px;
   border-radius: 100%;
 }
 
-.nav .menu .actions i {
+.menu .actions i {
   margin: 0 10px;
-  font-size: 24px;
 }
 
 /* regole notifiche */
 .nav .notification {
-  width: 100%;
   height: 12%;
   padding: 0 30px;
   display: flex;
@@ -76,7 +91,6 @@
 
 .nav .notification i {
   margin-right: 10px;
-  font-size: 24px;
   padding: 20px 15px;
   border-radius: 100%;
   color: #73DAFD;
@@ -89,7 +103,6 @@
 
 /* regole barra di ricerca */
 .nav .search {
-  width: 100%;
   height: 8%;
   padding: 10px;
   background-color: #E9E9E9;
@@ -111,33 +124,30 @@
 
 .nav .search-box input {
   width: 82%;
-  font-size: 12px;
   border: none;
 }
 
 /* regole lista amici */
 .nav .friend-list {
-  width: 100%;
   height: 70%;
   overflow: auto;
   background-color: #FFFFFF;
 }
 
 .nav .friend-list .friend {
-  width: 100%;
-  height: 100px;
+  height: 101px;
   padding: 10px 0;
   display: flex;
   justify-content: space-between;
-  border-bottom: 1px solid #D6DAD3;
+  border-bottom: 1px solid #E7EAEA;
+}
+
+.nav .friend-list .friend.selected {
+  background-color: #E7EAEA;
 }
 
 .nav .friend-list .friend .info {
-  width: 60%;
   display: flex;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 
 .nav .friend-list .friend .info img {
@@ -146,8 +156,14 @@
   border-radius: 100%;
 }
 
+.nav .friend-list .friend .info .small-text{
+  width: 200px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: " ...";
+}
+
 .nav .friend-list .friend .last-online {
-  width: 30%;
   margin-right: 10px;
   text-align: right;
 }
@@ -162,37 +178,8 @@
   border-left: 1px solid #D6DAD3;
 }
 
-/* regole informazioni amico selezionato */
-.main .info {
-  width: 100%;
-  height: 10%;
-  padding: 0 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #E9E9E9;
-}
-
-.main .info .friend {
-  width: 80%;
-  display: flex;
-  align-items: center;
-}
-
-.main .info .friend img {
-  margin-right: 20px;
-  height: 60px;
-  border-radius: 100%;
-}
-
-.main .info .actions i {
-  margin: 0 10px;
-  font-size: 24px;
-}
-
 /* regole chat */
 .main .chat {
-  width: 100%;
   height: 80%;
   padding: 50px 100px;
   display: flex;
@@ -219,7 +206,6 @@
 
 .main .chat .message .text {
   margin: 10px;
-  font-size: 18px;
 }
 
 .main .chat .message .data {
@@ -235,7 +221,6 @@
 
 /* regole barra di input in basso */
 .main .type {
-  width: 100%;
   height: 10%;
   display: flex;
   justify-content: space-around;
@@ -248,10 +233,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.main .type i {
-  font-size: 24px;
 }
 
 .main .type input {
