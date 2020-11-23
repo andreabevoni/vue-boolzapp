@@ -56,7 +56,6 @@
           <!-- lista degli amici e le relative chat -->
           <div class="friend-list">
 
-            <!-- amico 1 -->
             <div v-for="(friend, i) in contatti" :key="i" class="friend" :class="{selected: i === selezionato}" @click="selectProfile(i)">
 
               <!-- avatar + nome amico -->
@@ -64,18 +63,18 @@
                 <img :src="friend.avatar" alt="">
                 <div>
                   <div class="black big-text">{{friend.nome}}</div>
-                  <div class="grey small-text">{{friend.chat[friend.chat.length - 1].testo}}</div>
+                  <div class="grey small-text">{{friend.chat[(friend.chat.length - 1)].testo}}</div>
                 </div>
               </div>
 
               <!-- ultima volta che si é connesso -->
-              <div class="last-online grey small-text">{{friend.chat[friend.chat.length - 1].data}}</div>
+              <div class="last-online grey small-text">{{friend.chat[(friend.chat.length - 1)].data}}</div>
 
             </div>
 
           </div>
 
-        </div>
+        </div> <!-- fine nav -->
 
         <!-- parte a destra dell'app -->
         <div class="main">
@@ -88,7 +87,7 @@
               <img :src="contatti[selezionato].avatar" alt="">
               <div>
                 <div class="black big-text">{{contatti[selezionato].nome}}</div>
-                <div class="grey">Ultimo accesso oggi alle {{contatti[selezionato].chat[contatti[selezionato].chat.length - 1].data}}</div>
+                <div class="grey">Ultimo accesso oggi alle {{contatti[selezionato].chat[(contatti[selezionato].chat.length - 1)].data}}</div>
               </div>
             </div>
 
@@ -125,11 +124,11 @@
 
           </div>
 
-        </div>
+        </div> <!-- fine main -->
 
-      </div>
+      </div> <!-- fine contenitore con webapp -->
 
-    </div>
+    </div> <!-- fine #app -->
 
     <script type="text/javascript" src="js/script.js"></script>
 
