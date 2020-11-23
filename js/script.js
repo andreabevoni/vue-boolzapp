@@ -52,8 +52,8 @@ var app = new Vue({
         ]
       },
       {
-        nome: "Gianni",
-        avatar: "img/avatar_2.jpg",
+        nome: "Mister X",
+        avatar: "img/killer.jpg",
         chat: [
           {
             testo: "So cosa hai fatto. La mia vendetta sará terribile.",
@@ -84,7 +84,7 @@ var app = new Vue({
       },
       {
         nome: "Luisa",
-        avatar: "img/avatar_3.jpg",
+        avatar: "img/avatar_4.jpg",
         chat: [
           {
             testo: "Stella aiutami, sono diventata un uomo!",
@@ -97,7 +97,7 @@ var app = new Vue({
             inviato: true
           },
           {
-            testo: "Non lo sooooooooooo. So solo che ora ho il pipino. E non é nemmeno troppo ino :)",
+            testo: "Non lo sooooooooooo. So solo che ora ho il pipino!!!!!!!",
             data: "02/11/2020 22:06:15",
             inviato: false
           },
@@ -107,12 +107,12 @@ var app = new Vue({
             inviato: true
           },
           {
-            testo: "Oddio é terribile, ora penso solo a macchine veloci e calcio... Temo che a breve non saró piú me stessa...",
+            testo: "Oddio é terribile, ora penso solo a macchine sportive e calcio... Temo che a breve non saró piú me stessa...",
             data: "02/11/2020 22:09:08",
             inviato: false
           },
           {
-            testo: "Hey baby, sei libera stasera?",
+            testo: "Hey sventola, sei libera stasera?",
             data: "03/11/2020 14:11:27",
             inviato: false
           }
@@ -120,7 +120,7 @@ var app = new Vue({
       },
       {
         nome: "Machete",
-        avatar: "img/avatar_4.jpg",
+        avatar: "img/machete.jpeg",
         chat: [
           {
             testo: "Ciao Machete, non mi scrivi mai...",
