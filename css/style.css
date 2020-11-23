@@ -180,43 +180,45 @@ img {
 .main .chat {
   height: calc(100% - 170px);
   padding: 50px 100px;
-  display: flex;
-  flex-direction: column;
   overflow: auto;
   background-image: url("../img/mine.jpg");
 }
 
-.main .chat .message {
+.main .chat .row {
   margin: 10px 0;
+}
+
+.main .chat .row .message {
   padding: 5px;
   min-width: 200px;
   max-width: 400px;
   border-radius: 10px;
 }
 
-.main .chat .message.user {
-  align-self: flex-end;
-  background-color: #C9FBB6;
-}
-
-.main .chat .message.friend {
-  align-self: flex-start;
-  background-color: #FFFFFF;
-}
-
-.main .chat .message .text {
+.main .chat .row .message .text {
   margin: 10px;
 }
 
-.main .chat .message .data {
+.main .chat .row .message .data {
   font-size: 12px;
   text-align: right;
 }
 
-/* mi serve per aggiungere 50px di padding dopo l'ultimo messaggio o altrimenti in overflow sparisce */
-.main .chat::after {
+/* spostamento dei messaggi a dx e sx usando float e clearfix */
+.main .chat .row .message.user {
+  float: right;
+  background-color: #C9FBB6;
+}
+
+.main .chat .row .message.friend {
+  float: left;
+  background-color: #FFFFFF;
+}
+
+.main .chat .row::after{
   content: "";
-  padding-bottom: 50px;
+  display: table;
+  clear: both;
 }
 
 /* regole barra di input in basso */

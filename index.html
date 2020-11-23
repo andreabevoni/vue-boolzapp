@@ -102,9 +102,15 @@
           <!-- sezione chat -->
           <div class="chat">
 
-            <div v-for="(message, i) in contatti[selezionato].chat" :key="i" class="message" :class="message.inviato ? 'user' : 'friend'">
-              <div class="text black big-text">{{message.testo}}</div>
-              <div class="data grey">{{message.data}}</div>
+            <!-- riga che contiene i messaggi (per non dover usare flex) -->
+            <div v-for="(message, i) in contatti[selezionato].chat" :key="i" class="row">
+
+              <!-- effettivi messaggi -->
+              <div class="message" :class="message.inviato ? 'user' : 'friend'">
+                <div class="text black big-text">{{message.testo}}</div>
+                <div class="data grey">{{message.data}}</div>
+              </div>
+
             </div>
 
           </div>
