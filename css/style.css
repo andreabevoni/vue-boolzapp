@@ -6,7 +6,8 @@
   font-family: 'Lato', sans-serif;
 }
 
-.container {
+#app {
+  width: 100%;
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -15,8 +16,8 @@
 }
 
 .box {
-  width: 1400px;
-  height: 800px;
+  width: 80%;
+  height: 90%;
   display: flex;
 }
 
@@ -45,6 +46,12 @@ i {
   font-size: 24px;
 }
 
+img {
+  margin: 20px;
+  height: 80px;
+  border-radius: 100%;
+}
+
 /* regole relative al lato sinistro dell'app con il menú */
 /* regole generali lato sinistro */
 .nav {
@@ -56,8 +63,8 @@ i {
 
 /* regole menú in alto (sia in alto a sinistra nel nav utente che in alto a destra sopra la chat)*/
 .menu {
-  height: 10%;
-  padding: 0 20px;
+  height: 100px;
+  padding: 0 20px 0 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -65,15 +72,8 @@ i {
 }
 
 .menu .info {
-  width: 50%;
   display: flex;
   align-items: center;
-}
-
-.menu .info img {
-  margin-right: 20px;
-  height: 60px;
-  border-radius: 100%;
 }
 
 .menu .actions i {
@@ -82,7 +82,7 @@ i {
 
 /* regole notifiche */
 .nav .notification {
-  height: 12%;
+  height: 100px;
   padding: 0 30px;
   display: flex;
   align-items: center;
@@ -103,7 +103,7 @@ i {
 
 /* regole barra di ricerca */
 .nav .search {
-  height: 8%;
+  height: 60px;
   padding: 10px;
   background-color: #E9E9E9;
 }
@@ -129,7 +129,7 @@ i {
 
 /* regole lista amici */
 .nav .friend-list {
-  height: 70%;
+  height: calc(100% - 260px);
   overflow: auto;
   background-color: #FFFFFF;
 }
@@ -147,18 +147,12 @@ i {
 }
 
 .nav .friend-list .friend:hover {
-  background-color: #F5F5F5;
+  background-color: #C9FBB6;
   cursor: pointer;
 }
 
 .nav .friend-list .friend .info {
   display: flex;
-}
-
-.nav .friend-list .friend .info img {
-  margin: 0 20px;
-  height: 80px;
-  border-radius: 100%;
 }
 
 .nav .friend-list .friend .info .small-text{
@@ -170,7 +164,6 @@ i {
 
 .nav .friend-list .friend .last-online {
   margin-right: 10px;
-  text-align: right;
 }
 
 /* regole relative al lato destro dell'app con la chat */
@@ -185,7 +178,7 @@ i {
 
 /* regole chat */
 .main .chat {
-  height: 80%;
+  height: calc(100% - 170px);
   padding: 50px 100px;
   display: flex;
   flex-direction: column;
@@ -196,16 +189,18 @@ i {
 .main .chat .message {
   margin: 10px 0;
   padding: 5px;
-  width: 300px;
+  min-width: 200px;
+  max-width: 400px;
   border-radius: 10px;
 }
 
 .main .chat .message.user {
-  background-color: #C9FBB6;
   align-self: flex-end;
+  background-color: #C9FBB6;
 }
 
 .main .chat .message.friend {
+  align-self: flex-start;
   background-color: #FFFFFF;
 }
 
@@ -226,7 +221,7 @@ i {
 
 /* regole barra di input in basso */
 .main .type {
-  height: 10%;
+  height: 70px;
   display: flex;
   justify-content: space-around;
   align-items: center;
