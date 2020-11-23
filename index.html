@@ -6,12 +6,12 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
-    <!-- <script src="https://cdn.jsdelivr.net/npm/vue"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
   </head>
   <body>
 
     <!-- div contenitore con lo sfondo -->
-    <div class="container">
+    <div id="app" class="container">
 
       <!-- div contenente l'intera webapp -->
       <div class="box">
@@ -57,70 +57,19 @@
           <div class="friend-list">
 
             <!-- amico 1 -->
-            <div class="friend">
+            <div v-for="(friend, i) in contatti" :key="i" class="friend" :class="{selected: i === selezionato}" @click="selectProfile(i)">
 
               <!-- avatar + nome amico -->
               <div class="info">
-                <img src="img/avatar_1.jpg" alt="">
+                <img :src="friend.avatar" alt="">
                 <div>
-                  <div class="black big-text">Nome Amico</div>
-                  <div class="grey small-text">testo chat lungo lungo lungo lungo molto lungo</div>
+                  <div class="black big-text">{{friend.nome}}</div>
+                  <div class="grey small-text">{{friend.chat[friend.chat.length - 1].testo}}</div>
                 </div>
               </div>
 
               <!-- ultima volta che si é connesso -->
-              <div class="last-online grey small-text">20 11 2020 10:52:03</div>
-
-            </div>
-
-            <!-- amico 2 -->
-            <div class="friend">
-
-              <!-- avatar + nome amico -->
-              <div class="info">
-                <img src="img/avatar_1.jpg" alt="">
-                <div>
-                  <div class="black big-text">Nome Amico</div>
-                  <div class="grey small-text">testo chat lungo lungo lungo lungo molto lungo</div>
-                </div>
-              </div>
-
-              <!-- ultima volta che si é connesso -->
-              <div class="last-online grey small-text">20 11 2020 10:52:03</div>
-
-            </div>
-
-            <!-- amico 3 -->
-            <div class="friend selected">
-
-              <!-- avatar + nome amico -->
-              <div class="info">
-                <img src="img/avatar_1.jpg" alt="">
-                <div>
-                  <div class="black big-text">Nome Amico</div>
-                  <div class="grey small-text">testo chat lungo lungo lungo lungo molto lungo</div>
-                </div>
-              </div>
-
-              <!-- ultima volta che si é connesso -->
-              <div class="last-online grey small-text">20 11 2020 10:52:03</div>
-
-            </div>
-
-            <!-- amico 4 -->
-            <div class="friend">
-
-              <!-- avatar + nome amico -->
-              <div class="info">
-                <img src="img/avatar_1.jpg" alt="">
-                <div>
-                  <div class="black big-text">Nome Amico</div>
-                  <div class="grey small-text">testo chat lungo lungo lungo lungo molto lungo</div>
-                </div>
-              </div>
-
-              <!-- ultima volta che si é connesso -->
-              <div class="last-online grey small-text">20 11 2020 10:52:03</div>
+              <div class="last-online grey small-text">{{friend.chat[friend.chat.length - 1].data}}</div>
 
             </div>
 
@@ -136,10 +85,10 @@
 
             <!-- parte sx con l'avatar -->
             <div class="info">
-              <img src="img/avatar_1.jpg" alt="">
+              <img :src="contatti[selezionato].avatar" alt="">
               <div>
-                <div class="black big-text">Nome Amico</div>
-                <div class="grey">Ultimo accesso oggi alle 20 11 2020 12:01:32</div>
+                <div class="black big-text">{{contatti[selezionato].nome}}</div>
+                <div class="grey">Ultimo accesso oggi alle {{contatti[selezionato].chat[contatti[selezionato].chat.length - 1].data}}</div>
               </div>
             </div>
 
@@ -197,7 +146,7 @@
 
     </div>
 
-    <!-- <script type="text/javascript" src="js/script.js"></script> -->
+    <script type="text/javascript" src="js/script.js"></script>
 
   </body>
 </html>
