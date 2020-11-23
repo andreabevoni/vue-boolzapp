@@ -20,30 +20,35 @@ var app = new Vue({
         avatar: "img/avatar_1.jpg",
         chat: [
           {
-            testo: "Ciao Michele, come va?",
+            testo: "Ciao Stella, grandissima! Come va?",
             data: "12/11/2020 13:11:43",
-            inviato: true
-          },
-          {
-            testo: "Tutto a posto, te che mi dici?",
-            data: "12/11/2020 13:12:21",
             inviato: false
           },
           {
-            testo: "Mi servirebbero 500 testoni, non é che puoi prestarmeli?",
+            testo: "Quanto ti serve a sto giro?",
+            data: "12/11/2020 13:12:21",
+            inviato: true
+          },
+          {
+            testo: "No Stella cara, cosí peró mi offendi. Cioé io ti scrivo perché mi manca la tua compagnia e tu pensi che io voglia dei soldi. Sei davvero insensibile...",
             data: "12/11/2020 13:14:02",
-            inviato: true
+            inviato: false
           },
           {
-            testo: "Ti prego, sono al verde. Mi sfrattano se non pago entro due giorni...",
+            testo: "Cioé peró se vuoi darmi dei soldi mica te lo impedisco. Tipo un 500 euro che devo comprarmi la PS5. Solo se vuoi eh. Mica sono un approfittatore.",
             data: "12/11/2020 13:17:30",
-            inviato: true
+            inviato: false
           },
           {
-            testo: "Michele ci sei?",
+            testo: "Che poi se 500 sono troppi mi accontento anche di 300 per la Series S. Non é la stessa cosa, ma farei un sacrificio per questa volta.",
             data: "12/11/2020 14:47:22",
-            inviato: true
+            inviato: false
           },
+          {
+            testo: "Stella?",
+            data: "12/11/2020 18:11:13",
+            inviato: false
+          }
         ]
       },
       {
@@ -51,9 +56,29 @@ var app = new Vue({
         avatar: "img/avatar_2.jpg",
         chat: [
           {
-            testo: "placeholder",
-            data: "12/11/2020 13:11:43",
+            testo: "So cosa hai fatto. La mia vendetta sará terribile.",
+            data: "18/11/2020 19:01:51",
+            inviato: false
+          },
+          {
+            testo: "Come scusa? Ma tu chi sei?",
+            data: "18/11/2020 19:08:21",
             inviato: true
+          },
+          {
+            testo: "Aspetta, non sei Sandra?",
+            data: "18/11/2020 19:11:51",
+            inviato: false
+          },
+          {
+            testo: "No sono Stella...",
+            data: "18/11/2020 19:12:32",
+            inviato: true
+          },
+          {
+            testo: "Ops ho sbagliato chat, scusami. Oddio che figura del piffero!",
+            data: "18/11/2020 19:15:09",
+            inviato: false
           }
         ]
       },
@@ -62,9 +87,34 @@ var app = new Vue({
         avatar: "img/avatar_3.jpg",
         chat: [
           {
-            testo: "placeholder",
-            data: "12/11/2020 13:11:43",
+            testo: "Stella aiutami, sono diventata un uomo!",
+            data: "02/11/2020 22:03:12",
+            inviato: false
+          },
+          {
+            testo: "Scusami? Come é possibile???",
+            data: "02/11/2020 22:05:43",
             inviato: true
+          },
+          {
+            testo: "Non lo sooooooooooo. So solo che ora ho il pipino. E non é nemmeno troppo ino :)",
+            data: "02/11/2020 22:06:15",
+            inviato: false
+          },
+          {
+            testo: "AH!",
+            data: "02/11/2020 22:06:50",
+            inviato: true
+          },
+          {
+            testo: "Oddio é terribile, ora penso solo a macchine veloci e calcio... Temo che a breve non saró piú me stessa...",
+            data: "02/11/2020 22:09:08",
+            inviato: false
+          },
+          {
+            testo: "Hey baby, sei libera stasera?",
+            data: "03/11/2020 14:11:27",
+            inviato: false
           }
         ]
       },
@@ -73,10 +123,25 @@ var app = new Vue({
         avatar: "img/avatar_4.jpg",
         chat: [
           {
-            testo: "placeholder",
-            data: "12/11/2020 13:11:43",
+            testo: "Ciao Machete, non mi scrivi mai...",
+            data: "19/11/2020 16:20:12",
             inviato: true
-          }
+          },
+          {
+            testo: "Machete non manda messaggi",
+            data: "20/11/2020 07:45:16",
+            inviato: false
+          },
+          {
+            testo: "Tecnicamente me ne hai appena inviato uno...",
+            data: "20/11/2020 10:06:56",
+            inviato: true
+          },
+          {
+            testo: "Machete improvvisa",
+            data: "21/11/2020 07:58:32",
+            inviato: false
+          },
         ]
       }
     ]

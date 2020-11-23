@@ -25,7 +25,7 @@
             <!-- parte sx con l'avatar -->
             <div class="info">
               <img src="img/avatar_io.jpg" alt="">
-              <div class="black big-text">Nome Utente</div>
+              <div class="black big-text">Stella Leone</div>
             </div>
 
             <!-- parte dx con il menu -->
@@ -103,24 +103,9 @@
           <!-- sezione chat -->
           <div class="chat">
 
-            <div class="message user">
-              <div class="text black big-text">Messaggio utente</div>
-              <div class="data grey">10/01/2020 15:30:55</div>
-            </div>
-
-            <div class="message friend">
-              <div class="text black big-text">Messaggio amico</div>
-              <div class="data grey">10/01/2020 15:30:55</div>
-            </div>
-
-            <div class="message user">
-              <div class="text black big-text">Messaggio utente lunghissimissimo ma davvero lungo che non finisce mai</div>
-              <div class="data grey">10/01/2020 15:30:55</div>
-            </div>
-
-            <div class="message friend">
-              <div class="text black big-text">Messaggio amico lunghissimissimo ma davvero lungo che non finisce mai nemmeno questo</div>
-              <div class="data grey">10/01/2020 15:30:55</div>
+            <div v-for="(message, i) in contatti[selezionato].chat" :key="i" class="message" :class="message.inviato ? 'user' : 'friend'">
+              <div class="text black big-text">{{message.testo}}</div>
+              <div class="data grey">{{message.data}}</div>
             </div>
 
           </div>
