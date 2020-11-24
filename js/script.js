@@ -175,7 +175,7 @@ var app = new Vue({
         // creo il nuovo oggetto da pushare
         let newMessage = {
           testo: this.userText,
-          data: "12/11/2020 13:11:43",
+          data: this.getTime(),
           inviato: true
         }
         // pusho l'oggetto nella chat selezionata e resetto la casella di input
@@ -192,7 +192,7 @@ var app = new Vue({
       // creo il nuovo oggetto da pushare
       let newMessage = {
         testo: "Ok",
-        data: "12/11/2020 13:11:43",
+        data: this.getTime(),
         inviato: false
       }
       // pusho l'oggetto nella chat selezionata
@@ -203,6 +203,21 @@ var app = new Vue({
     // funzione che scrolla la chat in fondo
     scrollChat: function() {
       this.$refs.chatbox.scrollTop = this.$refs.chatbox.scrollHeight;
+    },
+    // funzione che ottiene la data e l'orario dalla macchina utente
+    getTime: function() {
+      let date = new Date();
+      let day = date.getDate();
+      let month = date.getMonth() + 1;
+      let year = date.getFullYear();
+      let hours = this.addZero(date.getHours());
+      let minutes = this.addZero(date.getMinutes());
+      let seconds = this.addZero(date.getSeconds());
+      return `${day}/${month}/${year} ${hours}:${minutes}:${seconds}`;
+    },
+    // funzione per aggiungere lo 0 a ore, minuti e secondi se sono inferiori a 10 (altrimenti stampa 1:3:4 al posto di 01:03:04)
+    addZero: function(time) {
+      return time < 10 ? "0" + time : time;
     }
   }
 });
