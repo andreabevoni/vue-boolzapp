@@ -9,12 +9,13 @@
 // con header con dati relativi a chat attiva;
 // relativa chat in elenco rimane selezionata
 
-// Milestone 2: inserimento msg in chat e relativa risposta:
+// Milestone 3: inserimento msg in chat e relativa risposta:
 // l’utente può scrivere nel campo di input in basso;
 // al click sull’invio succedono 2 cose:
 // 1. il mio msg viene inviato alla chat relativa;
 // 2. ottengo un msg di risposta automatico dopo 1 secondo;
 // tutto ciò viene agganciato/creato solo nella chat attiva;
+
 // possibili BONUS:
 // l'invio messaggio funziona sia al click sull’elemento in pagina, sia dal tasto ENTER della tastiera;
 // metto data e ora reali;
@@ -178,7 +179,20 @@ var app = new Vue({
         // pusho l'oggetto nella chat selezionata e resetto la casella di input
         this.contatti[this.selezionato].chat.push(newMessage);
         this.userText = "";
+        // dopo 1 secondo faccio partire la funzione di risposta automatica
+        setTimeout(this.autoReply, 1000);
       }
+    },
+    // funzione di risposta automatica ai messaggi
+    autoReply: function() {
+      // creo il nuovo oggetto da pushare
+      let newMessage = {
+        testo: "Ok",
+        data: "12/11/2020 13:11:43",
+        inviato: false
+      }
+      // pusho l'oggetto nella chat selezionata
+      this.contatti[this.selezionato].chat.push(newMessage);
     }
   }
 });
