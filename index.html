@@ -100,10 +100,10 @@
           </div>
 
           <!-- sezione chat -->
-          <div class="chat">
+          <div ref="chatbox" class="chat">
 
             <!-- riga che contiene i messaggi (per non dover usare flex) -->
-            <div v-for="(message, i) in contatti[selezionato].chat" :key="i" class="row">
+            <div v-for="(message, x) in contatti[selezionato].chat" :key="x" class="row">
 
               <!-- effettivi messaggi -->
               <div class="message" :class="message.inviato ? 'user' : 'friend'">
@@ -122,7 +122,7 @@
               <i class="far fa-smile dark"></i>
             </div>
 
-            <input v-model="userText" placeholder="Scrivi un messaggio">
+            <input v-model="userText" placeholder="Scrivi un messaggio" @keyup.enter="addChat">
 
             <div class="spaziatura">
               <i class="fas fa-microphone dark" @click="addChat"></i>

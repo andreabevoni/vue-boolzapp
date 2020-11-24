@@ -17,9 +17,9 @@
 // tutto ciò viene agganciato/creato solo nella chat attiva;
 
 // possibili BONUS:
-// l'invio messaggio funziona sia al click sull’elemento in pagina, sia dal tasto ENTER della tastiera;
-// metto data e ora reali;
-// scrollo la chat per far vedere i nuovi msg;
+// 1. l'invio messaggio funziona sia al click sull’elemento in pagina, sia dal tasto ENTER della tastiera;
+// 2. metto data e ora reali;
+// 3. scrollo la chat per far vedere i nuovi msg;
 
 
 // istanzio Vue e definisco i data
@@ -165,6 +165,8 @@ var app = new Vue({
     // funzione per selezionare il profilo amico cliccato
     selectProfile: function(i) {
       this.selezionato = i;
+      // scrollo la chat in basso dopo 1 millisecondo (senza il delay non funziona)
+      setTimeout(this.scrollChat, 1);
     },
     // funzione che aggiunge un nuovo messaggio utente alla lista
     addChat: function() {
@@ -179,6 +181,8 @@ var app = new Vue({
         // pusho l'oggetto nella chat selezionata e resetto la casella di input
         this.contatti[this.selezionato].chat.push(newMessage);
         this.userText = "";
+        // scrollo la chat in basso
+        setTimeout(this.scrollChat, 1);
         // dopo 1 secondo faccio partire la funzione di risposta automatica
         setTimeout(this.autoReply, 1000);
       }
@@ -193,6 +197,12 @@ var app = new Vue({
       }
       // pusho l'oggetto nella chat selezionata
       this.contatti[this.selezionato].chat.push(newMessage);
+      // scrollo la chat in basso
+      setTimeout(this.scrollChat, 1);
+    },
+    // funzione che scrolla la chat in fondo
+    scrollChat: function() {
+      this.$refs.chatbox.scrollTop = this.$refs.chatbox.scrollHeight;
     }
   }
 });
