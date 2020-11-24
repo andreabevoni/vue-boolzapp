@@ -122,10 +122,10 @@
               <i class="far fa-smile dark"></i>
             </div>
 
-            <input placeholder="Scrivi un messaggio">
+            <input v-model="userText" placeholder="Scrivi un messaggio">
 
             <div class="spaziatura">
-              <i class="fas fa-microphone dark"></i>
+              <i class="fas fa-microphone dark" @click="addChat"></i>
             </div>
 
           </div>
