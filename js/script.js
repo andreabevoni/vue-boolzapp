@@ -43,32 +43,38 @@ var app = new Vue({
           {
             testo: "Ciao Stella, grandissima! Come va?",
             data: "12/11/2020 13:11:43",
-            inviato: false
+            inviato: false,
+            showMenu: false
           },
           {
             testo: "Quanto ti serve a sto giro?",
             data: "12/11/2020 13:12:21",
-            inviato: true
+            inviato: true,
+            showMenu: false
           },
           {
             testo: "No Stella cara, cosí peró mi offendi. Cioé io ti scrivo perché mi manca la tua compagnia e tu pensi che io voglia dei soldi. Sei davvero insensibile...",
             data: "12/11/2020 13:14:02",
-            inviato: false
+            inviato: false,
+            showMenu: false
           },
           {
             testo: "Cioé peró se vuoi darmi dei soldi mica te lo impedisco. Tipo un 500 euro che devo comprarmi la PS5. Solo se vuoi eh. Mica sono un approfittatore.",
             data: "12/11/2020 13:17:30",
-            inviato: false
+            inviato: false,
+            showMenu: false
           },
           {
             testo: "Che poi se 500 sono troppi mi accontento anche di 300 per la Series S. Non é la stessa cosa, ma farei un sacrificio per questa volta.",
             data: "12/11/2020 14:47:22",
-            inviato: false
+            inviato: false,
+            showMenu: false
           },
           {
             testo: "Stella?",
             data: "12/11/2020 18:11:13",
-            inviato: false
+            inviato: false,
+            showMenu: false
           }
         ]
       },
@@ -80,27 +86,32 @@ var app = new Vue({
           {
             testo: "So cosa hai fatto. La mia vendetta sará terribile.",
             data: "18/11/2020 19:01:51",
-            inviato: false
+            inviato: false,
+            showMenu: false
           },
           {
             testo: "Come scusa? Ma tu chi sei?",
             data: "18/11/2020 19:08:21",
-            inviato: true
+            inviato: true,
+            showMenu: false
           },
           {
             testo: "Aspetta, non sei Sandra?",
             data: "18/11/2020 19:11:51",
-            inviato: false
+            inviato: false,
+            showMenu: false
           },
           {
             testo: "No sono Stella...",
             data: "18/11/2020 19:12:32",
-            inviato: true
+            inviato: true,
+            showMenu: false
           },
           {
             testo: "Ops ho sbagliato chat, scusami. Oddio che figura del piffero!",
             data: "18/11/2020 19:15:09",
-            inviato: false
+            inviato: false,
+            showMenu: false
           }
         ]
       },
@@ -112,32 +123,38 @@ var app = new Vue({
           {
             testo: "Stella aiutami, sono diventata un uomo!",
             data: "02/11/2020 22:03:12",
-            inviato: false
+            inviato: false,
+            showMenu: false
           },
           {
             testo: "Scusami? Come é possibile???",
             data: "02/11/2020 22:05:43",
-            inviato: true
+            inviato: true,
+            showMenu: false
           },
           {
             testo: "Non lo sooooooooooo. So solo che ora ho il pipino!!!!!!!",
             data: "02/11/2020 22:06:15",
-            inviato: false
+            inviato: false,
+            showMenu: false
           },
           {
             testo: "AH!",
             data: "02/11/2020 22:06:50",
-            inviato: true
+            inviato: true,
+            showMenu: false
           },
           {
             testo: "Oddio é terribile, ora penso solo a macchine sportive e calcio... Temo che a breve non saró piú me stessa...",
             data: "02/11/2020 22:09:08",
-            inviato: false
+            inviato: false,
+            showMenu: false
           },
           {
             testo: "Hey sventola, sei libera stasera?",
             data: "03/11/2020 14:11:27",
-            inviato: false
+            inviato: false,
+            showMenu: false
           }
         ]
       },
@@ -149,22 +166,26 @@ var app = new Vue({
           {
             testo: "Ciao Machete, non mi scrivi mai...",
             data: "19/11/2020 16:20:12",
-            inviato: true
+            inviato: true,
+            showMenu: false
           },
           {
             testo: "Machete non manda messaggi",
             data: "20/11/2020 07:45:16",
-            inviato: false
+            inviato: false,
+            showMenu: false
           },
           {
             testo: "Tecnicamente me ne hai appena inviato uno...",
             data: "20/11/2020 10:06:56",
-            inviato: true
+            inviato: true,
+            showMenu: false
           },
           {
             testo: "Machete improvvisa",
             data: "21/11/2020 07:58:32",
-            inviato: false
+            inviato: false,
+            showMenu: false
           },
         ]
       }
@@ -185,7 +206,8 @@ var app = new Vue({
         let newMessage = {
           testo: this.userText,
           data: this.getTime(),
-          inviato: true
+          inviato: true,
+          showMenu: false
         }
         // pusho l'oggetto nella chat selezionata e resetto la casella di input
         this.contatti[this.selezionato].chat.push(newMessage);
@@ -202,7 +224,8 @@ var app = new Vue({
       let newMessage = {
         testo: "Ok",
         data: this.getTime(),
-        inviato: false
+        inviato: false,
+        showMenu: false
       }
       // pusho l'oggetto nella chat selezionata
       this.contatti[this.selezionato].chat.push(newMessage);
@@ -227,6 +250,18 @@ var app = new Vue({
     // funzione per aggiungere lo 0 a ore, minuti e secondi se sono inferiori a 10 (altrimenti stampa 1:3:4 al posto di 01:03:04)
     addZero: function(time) {
       return time < 10 ? "0" + time : time;
+    },
+    // funzione che droppa il menu dei messaggi quando clicco sulla freccina
+    dropMenu: function(i) {
+      this.contatti[this.selezionato].chat[i].showMenu = !this.contatti[this.selezionato].chat[i].showMenu;
+    },
+    // funzione che cancella il messaggio selezionato
+    deleteMex: function(i) {
+      if (this.contatti[this.selezionato].chat.length > 1) {
+        this.contatti[this.selezionato].chat.splice(i,1);
+      } else {
+        this.contatti[this.selezionato].chat = [];
+      }
     }
   },
   computed: {

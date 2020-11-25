@@ -193,10 +193,13 @@ img {
   min-width: 200px;
   max-width: 400px;
   border-radius: 10px;
+  position: relative;
 }
 
 .main .chat .row .message .text {
   margin: 10px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .main .chat .row .message .data {
@@ -219,6 +222,40 @@ img {
   content: "";
   display: table;
   clear: both;
+}
+
+/* menú dropdown dei messaggi */
+.main .chat .row .message .text i {
+  margin-left: 10px;
+  display: none;
+}
+
+.main .chat .row .message .text:hover i{
+  display:block;
+}
+
+.main .chat .row .message .text i:hover{
+  cursor: pointer;
+}
+
+.main .chat .row .message .dropdown {
+  padding: 10px;
+  position: absolute;
+  bottom: -60px;
+  right: 0;
+  z-index: 100;
+  text-align: center;
+  background-color: #FFFFFF;
+  box-shadow: 0 5px 20px 5px lightgrey;
+}
+
+.main .chat .row .message .dropdown div:first-child {
+  margin-bottom: 10px;
+}
+
+.main .chat .row .message .dropdown div:hover {
+  cursor: pointer;
+  color: #AFAFAF;
 }
 
 /* regole barra di input in basso */

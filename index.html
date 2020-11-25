@@ -63,12 +63,14 @@
                 <img :src="contact.avatar" alt="">
                 <div>
                   <div class="black big-text">{{contact.nome}}</div>
-                  <div class="grey small-text">{{contact.chat[(contact.chat.length - 1)].testo}}</div>
+                  <div class="grey small-text" v-if="contact.chat.length >= 1">{{contact.chat[(contact.chat.length - 1)].testo}}</div>
+                  <div class="grey small-text" v-else>Nessun messaggio in questa chat</div>
                 </div>
               </div>
 
               <!-- ultima volta che si é connesso -->
-              <div class="last-online grey small-text">{{contact.chat[(contact.chat.length - 1)].data}}</div>
+              <div class="last-online grey small-text" v-if="contact.chat.length >= 1">{{contact.chat[(contact.chat.length - 1)].data}}</div>
+              <div class="last-online grey small-text" v-else>Ultimo accesso sconosciuto</div>
 
             </div>
 
@@ -87,7 +89,8 @@
               <img :src="contatti[selezionato].avatar" alt="">
               <div>
                 <div class="black big-text">{{contatti[selezionato].nome}}</div>
-                <div class="grey">Ultimo accesso oggi alle {{contatti[selezionato].chat[(contatti[selezionato].chat.length - 1)].data}}</div>
+                <div class="grey" v-if="contatti[selezionato].chat.length >= 1">Ultimo accesso oggi alle {{contatti[selezionato].chat[(contatti[selezionato].chat.length - 1)].data}}</div>
+                <div class="grey" v-else>Ultimo accesso sconosciuto</div>
               </div>
             </div>
 
@@ -107,7 +110,15 @@
 
               <!-- effettivi messaggi -->
               <div class="message" :class="message.inviato ? 'user' : 'friend'">
-                <div class="text black big-text">{{message.testo}}</div>
+                <div class="text big-text">
+                  <div class="black">{{message.testo}}</div>
+                  <i class="fas fa-chevron-down grey" @click="dropMenu(i)"></i>
+                  <!-- menu dropdown -->
+                  <div class="dropdown" v-show="message.showMenu">
+                    <div class="black">Info messaggio</div>
+                    <div class="black" @click="deleteMex(i)">Cancella messaggio</div>
+                  </div>
+                </div>
                 <div class="data grey">{{message.data}}</div>
               </div>
 
