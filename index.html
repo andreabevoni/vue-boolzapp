@@ -56,19 +56,19 @@
           <!-- lista degli amici e le relative chat -->
           <div class="friend-list">
 
-            <div v-for="(friend, i) in dynamicList" :key="i" class="friend" :class="{selected: i === selezionato}" @click="selectProfile(i)">
+            <div v-for="contact in dynamicList" class="friend" :class="{selected: contact.id === selezionato}" @click="selectProfile(contact.id)">
 
               <!-- avatar + nome amico -->
               <div class="info">
-                <img :src="friend.avatar" alt="">
+                <img :src="contact.avatar" alt="">
                 <div>
-                  <div class="black big-text">{{friend.nome}}</div>
-                  <div class="grey small-text">{{friend.chat[(friend.chat.length - 1)].testo}}</div>
+                  <div class="black big-text">{{contact.nome}}</div>
+                  <div class="grey small-text">{{contact.chat[(contact.chat.length - 1)].testo}}</div>
                 </div>
               </div>
 
               <!-- ultima volta che si é connesso -->
-              <div class="last-online grey small-text">{{friend.chat[(friend.chat.length - 1)].data}}</div>
+              <div class="last-online grey small-text">{{contact.chat[(contact.chat.length - 1)].data}}</div>
 
             </div>
 
@@ -103,7 +103,7 @@
           <div ref="chatbox" class="chat">
 
             <!-- riga che contiene i messaggi (per non dover usare flex) -->
-            <div v-for="(message, x) in contatti[selezionato].chat" :key="x" class="row">
+            <div v-for="(message, i) in contatti[selezionato].chat" :key="i" class="row">
 
               <!-- effettivi messaggi -->
               <div class="message" :class="message.inviato ? 'user' : 'friend'">

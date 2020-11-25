@@ -36,6 +36,7 @@ var app = new Vue({
     filterChat: "",
     contatti: [
       {
+        id: 0,
         nome: "Michele",
         avatar: "img/avatar_1.jpg",
         chat: [
@@ -72,6 +73,7 @@ var app = new Vue({
         ]
       },
       {
+        id: 1,
         nome: "Mister X",
         avatar: "img/killer.jpg",
         chat: [
@@ -103,6 +105,7 @@ var app = new Vue({
         ]
       },
       {
+        id: 2,
         nome: "Luisa",
         avatar: "img/avatar_4.jpg",
         chat: [
@@ -139,6 +142,7 @@ var app = new Vue({
         ]
       },
       {
+        id: 3,
         nome: "Machete",
         avatar: "img/machete.jpeg",
         chat: [
@@ -226,16 +230,15 @@ var app = new Vue({
     }
   },
   computed: {
+    // funzione che filtra in automatico la lista amici in base a quanto digitato nella casella di input relativa
+    // dato che gli amici non filtrati non vengono renderizzati nel DOM, si perde l'index originale e diventa impossibile selezionare la chat corretta
+    // per fixare questo problema ho aggiunto una nuova proprietá ID agli oggetti che contiene la loro posizione nell'array
     dynamicList: function() {
-      if (this.filterChat == '') {
-        return this.contatti;
-      } else {
-        return this.contatti.filter(contatto => {
-          if (contatto.nome.toUpperCase().includes(this.filterChat.toUpperCase())) {
-            return contatto;
-          }
-        });
-      }
+      return this.contatti.filter(contatto => {
+        if (contatto.nome.toUpperCase().includes(this.filterChat.toUpperCase())) {
+          return contatto;
+        }
+      });
     }
   }
 });
