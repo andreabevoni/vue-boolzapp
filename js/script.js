@@ -15,11 +15,16 @@
 // 1. il mio msg viene inviato alla chat relativa;
 // 2. ottengo un msg di risposta automatico dopo 1 secondo;
 // tutto ciò viene agganciato/creato solo nella chat attiva;
-
 // possibili BONUS:
 // 1. l'invio messaggio funziona sia al click sull’elemento in pagina, sia dal tasto ENTER della tastiera;
 // 2. metto data e ora reali;
 // 3. scrollo la chat per far vedere i nuovi msg;
+
+// Milestone 4: filtro su listato chat attive:
+// l’utente può scrivere nel campo di input a sx;
+// alla digitazione, ad ogni carattere digitato il listato si aggiorna in base alla corrispondenza della stringa scritta nell’input, rispetto al nomeContatto/Chat.
+// possibili BONUS:
+// cancellazione msg singolo dalla chat;
 
 
 // istanzio Vue e definisco i data
@@ -28,7 +33,7 @@ var app = new Vue({
   data: {
     selezionato: 0,
     userText: "",
-
+    filterChat: "",
     contatti: [
       {
         nome: "Michele",
@@ -218,6 +223,19 @@ var app = new Vue({
     // funzione per aggiungere lo 0 a ore, minuti e secondi se sono inferiori a 10 (altrimenti stampa 1:3:4 al posto di 01:03:04)
     addZero: function(time) {
       return time < 10 ? "0" + time : time;
+    }
+  },
+  computed: {
+    dynamicList: function() {
+      if (this.filterChat == '') {
+        return this.contatti;
+      } else {
+        return this.contatti.filter(contatto => {
+          if (contatto.nome.toUpperCase().includes(this.filterChat.toUpperCase())) {
+            return contatto;
+          }
+        });
+      }
     }
   }
 });
